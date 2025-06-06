@@ -37,6 +37,44 @@ A hardware-accelerated embedded system that filters and analyzes radiation data 
 - `/verilog/` - HDL source files for FPGA implementation
 - `/overlays/` - Generated FPGA bitstreams and hardware handoff files
 - `project_config.tcl` - Vivado project configuration
+- `create_block_diagram.tcl` - Automated script for generating Vivado block diagrams
+
+## Block Diagram Generation
+
+This project includes an automated TCL script to generate a comprehensive block diagram in Vivado showing all IP blocks, interconnections, and signal flows.
+
+### Generated Block Diagram
+![Vivado Block Diagram](https://imgur.com/BT6dUu6)
+
+The automatically generated block diagram includes:
+- **Zynq Processing System 7** with GP0 (control) and HP0 (high-performance data) interfaces
+- **Multi-clock domains**: 100MHz (control), 200MHz (data), 50MHz (auxiliary)
+- **AXI Interconnects** for both control and high-throughput data paths
+- **Custom Radiation Detector IP** with signal generation and detection cores
+- **AXI DMA** for efficient memory-mapped data transfers
+- **AXI GPIO** and **AXI Timer** for peripheral control
+- **Complete reset network** with proper synchronization
+- **External interfaces** for LEDs, interrupts, and system I/O
+
+### How to Generate the Block Diagram
+
+1. **Open Vivado** and create/open your project
+2. **Run the automation script** in the TCL Console:
+   ```tcl
+   source create_block_diagram.tcl
+   ```
+3. **View the diagram**: Go to Sources → Design Sources → radiation_system_bd
+4. **Double-click** to open the visual block diagram editor
+
+### Block Diagram Features
+- **Visual IP representation** with all interface pins displayed
+- **Color-coded connections** showing different signal types (clocks, resets, AXI buses)
+- **Bus width annotations** on all data connections
+- **Address space mapping** with base addresses for each peripheral
+- **Clock domain indicators** showing timing relationships
+- **Reset network topology** ensuring proper startup sequencing
+
+The block diagram provides a complete visual overview of the radiation detection system architecture, making it easy to understand data flow, control paths, and system interconnections.
 
 ## Usage
 
