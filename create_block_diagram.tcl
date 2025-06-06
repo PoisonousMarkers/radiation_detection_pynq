@@ -1,8 +1,10 @@
 #!/usr/bin/tclsh
 # Vivado Block Diagram Creation Script
 # Run this in Vivado TCL Console: source create_block_diagram.tcl
+# Note: This script assumes a project is already open in Vivado
 
 puts "Creating detailed block diagram for radiation detector..."
+puts "Note: Using current project (xc7z020clg400-1 PYNQ-Z2 compatible)"
 
 # Create the block design
 create_bd_design "radiation_system_bd"
@@ -206,8 +208,109 @@ puts "Creating HDL wrapper..."
 make_wrapper -files [get_files radiation_system_bd.bd] -top
 add_files -norecurse [file normalize "radiation_system_bd_wrapper.v"]
 
+# Run complete build flow
+puts "Running synthesis..."
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+
+if {[get_property PROGRESS [get_runs synth_1]] != "100%"} {
+    puts "❌ Synthesis failed!"
+    exit 1
+}
+
+puts "Running implementation..."
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+
+if {[get_property PROGRESS [get_runs impl_1]] != "100%"} {
+    puts "❌ Implementation failed!"
+    exit 1
+}
+
+puts "Generating bitstream and HWH file..."
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+
+if {[get_property PROGRESS [get_runs impl_1]] != "100%"} {
+    puts "❌ Bitstream generation failed!"
+    exit 1
+}
+
+# Automatically generate .hwh file for PYNQ
+puts "Generating hardware handoff (.hwh) file for PYNQ..."
+open_run impl_1
+
+# Create overlays directory
+file mkdir "overlays"
+
+# Generate HWH file - try multiple methods for compatibility
+set hwh_generated 0
+
+# Method 1: Try write_hw_platform (Vivado 2019.2+)
+if {[catch {
+    write_hw_platform -fixed -force -include_bit -file "overlays/radiation_detector.xsa"
+    # Extract HWH from XSA
+    exec unzip -o "overlays/radiation_detector.xsa" "*.hwh" -d "overlays/"
+    # Find and rename the HWH file
+    set hwh_files [glob -nocomplain "overlays/*.hwh"]
+    if {[llength $hwh_files] > 0} {
+        file rename [lindex $hwh_files 0] "overlays/radiation_detector.hwh"
+        set hwh_generated 1
+    }
+} result]} {
+    puts "Note: write_hw_platform not available, trying alternative method..."
+}
+
+# Method 2: Try updated write_hwdef syntax (Vivado 2018+)
+if {!$hwh_generated} {
+    if {[catch {
+        write_hwdef -hwdef "overlays/radiation_detector.hwh"
+        set hwh_generated 1
+    } result]} {
+        puts "Note: write_hwdef with -hwdef not available, trying legacy syntax..."
+    }
+}
+
+# Method 3: Try legacy write_hwdef syntax  
+if {!$hwh_generated} {
+    if {[catch {
+        write_hwdef -file "overlays/radiation_detector.hwh"
+        set hwh_generated 1
+    } result]} {
+        puts "Warning: Could not generate HWH file with any method"
+        puts "Error: $result"
+    }
+}
+
+# Copy bitstream to overlays directory
+set bit_file [glob -nocomplain "*.runs/impl_1/radiation_system_bd_wrapper.bit"]
+if {[llength $bit_file] > 0} {
+    file copy -force [lindex $bit_file 0] "overlays/radiation_detector.bit"
+    puts "✅ Bitstream copied to overlays/radiation_detector.bit"
+} else {
+    puts "❌ Bitstream not found"
+}
+
+# Verify files were created
+if {$hwh_generated && [file exists "overlays/radiation_detector.hwh"]} {
+    set hwh_size [file size "overlays/radiation_detector.hwh"]
+    puts "✅ Hardware handoff file generated: overlays/radiation_detector.hwh ($hwh_size bytes)"
+} else {
+    puts "❌ Failed to generate .hwh file"
+    puts "   This may be due to:"
+    puts "   • Vivado version compatibility"
+    puts "   • Missing block design"
+    puts "   • Design has no AXI interfaces"
+}
+
+puts ""
+puts "🎉 Complete build finished!"
+puts "Generated overlay files:"
+puts "  ✅ overlays/radiation_detector.bit  (Bitstream)"
+puts "  ✅ overlays/radiation_detector.hwh  (Hardware Handoff)"
+puts ""
 puts "Block diagram creation complete!"
-puts "You can now view the diagram in Vivado by opening the Block Design tab."
 puts "The diagram shows:"
 puts "  - Processing System with GP0 and HP0 interfaces"
 puts "  - Multi-clock domain (100MHz, 200MHz, 50MHz)"
