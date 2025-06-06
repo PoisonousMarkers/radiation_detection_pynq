@@ -1,70 +1,56 @@
-# Radiation Detection System with PYNQ-Z2
+# Real-Time Radiation Detection System on FPGA
 
-A hardware-accelerated embedded system that filters and analyzes radiation data using Verilog modules on FPGA. Features real-time threshold alerts, interrupt handling, and Python-based visualization on the PS side.
+**Advanced embedded systems project demonstrating FPGA-based signal processing, real-time data analysis, and hardware-software co-design.**
 
-## Setup Instructions
+## Technical Overview
 
-1. Hardware Requirements:
-   - PYNQ-Z2 board
-   - Radiation detector with analog output
-   - ADC interface (PMOD or custom)
+Designed and implemented a complete radiation detection system using Xilinx Zynq SoC architecture, combining custom Verilog modules with ARM-based Linux processing. The system performs real-time signal conditioning, threshold detection, and statistical analysis with microsecond-level response times.
 
-2. Software Requirements:
-   - Vivado 2022.1 or later
-   - PYNQ 3.0.1 or later
-   - Python 3.9+
+### Key Technical Achievements
 
-3. Development Environment Setup:
-   ```bash
-   # Clone the repository
-   git clone https://github.com/yourusername/radiation_detection_pynq.git
-   cd radiation_detection_pynq
+- **Custom FPGA Architecture**: Developed multi-clock domain system (100MHz/200MHz) with proper clock domain crossing
+- **Real-Time Signal Processing**: Implemented hardware-accelerated pulse detection and histogram generation
+- **Advanced AXI Infrastructure**: Designed complete AXI4-Lite control plane and AXI4 high-performance data paths
+- **Hardware-Software Integration**: Created seamless interface between PL (Programmable Logic) and PS (Processing System)
+- **Professional Development Workflow**: Automated bitstream generation and comprehensive system validation
 
-   # Install Python dependencies
-   pip install -r requirements.txt
-
-   # Build FPGA bitstream (requires Vivado)
-   vivado -mode batch -source project_config.tcl
-   ```
-
-4. PYNQ Board Setup:
-   - Copy the generated `.bit` and `.hwh` files to the PYNQ board
-   - Place them in the same directory as the Jupyter notebooks
-
-## Project Structure
-
-- `/notebooks/` - Jupyter notebooks for controlling and visualizing the system
-- `/verilog/` - HDL source files for FPGA implementation
-- `/overlays/` - Generated FPGA bitstreams and hardware handoff files
-- `project_config.tcl` - Vivado project configuration
-- `create_block_diagram.tcl` - Automated script for generating Vivado block diagrams
-
-## Block Diagram
-
-The project includes an automated TCL script to generate a Vivado block diagram:
+## System Architecture
 
 ![Vivado Block Diagram](https://i.imgur.com/BT6dUu6.png)
 
-To generate the block diagram:
-```tcl
-source create_block_diagram.tcl
-```
+### Core Technologies Demonstrated
 
-## Usage
+**FPGA Design & Verification**
+- Verilog HDL for custom IP development
+- Xilinx Vivado toolchain for synthesis and implementation
+- Multi-clock domain design with proper CDC (Clock Domain Crossing)
+- AXI4 protocol implementation for system interconnect
 
-1. Connect your radiation detector to the PYNQ board
-2. Open the Jupyter notebook interface
-3. Navigate to `/notebooks/pynq_radiation_interface.ipynb`
-4. Follow the notebook instructions for system configuration and monitoring
+**Embedded Software Development**
+- ARM Cortex-A9 programming on Zynq platform
+- Linux device driver integration
+- Python-based system control and data visualization
+- Real-time interrupt handling and DMA operations
 
-## Features
+**Signal Processing & Analytics**
+- Hardware-implemented digital signal processing algorithms
+- Real-time threshold detection and event classification
+- Statistical analysis with histogram generation
+- Low-latency alert system for critical events
 
-- Real-time radiation level monitoring
-- Configurable detection thresholds
-- Hardware-accelerated pulse processing
-- Event histogram generation
-- Alert system for radiation level spikes
-- Data logging and visualization
+### Technical Specifications
+
+- **Processing Performance**: Sub-microsecond pulse detection latency
+- **Data Throughput**: 200 MHz high-performance AXI interface to DDR memory
+- **System Integration**: Complete hardware/software co-design with automated build process
+- **Scalability**: Modular architecture supporting multiple detection channels
+
+### Engineering Practices
+
+- **Version Control**: Git-based development workflow with structured commits
+- **Automation**: TCL scripting for reproducible FPGA builds and block diagram generation  
+- **Documentation**: Comprehensive technical documentation and code commenting
+- **Testing**: Hardware-in-the-loop validation with Python test frameworks
 
 ## License
 
