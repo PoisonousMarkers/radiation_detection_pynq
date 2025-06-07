@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Fri Jun  6 15:58:25 2025
-# Process ID: 20872
+# Start of session at: Fri Jun  6 21:15:29 2025
+# Process ID: 52548
 # Current directory: D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1
 # Command line: vivado.exe -log radiation_system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source radiation_system_wrapper.tcl
 # Log file: D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/radiation_system_wrapper.vds
@@ -11,40 +11,45 @@
 # Running On: DESKTOP-UI9B5C1, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 17124 MB
 #-----------------------------------------------------------
 source radiation_system_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 395.699 ; gain = 65.656
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 394.391 ; gain = 57.535
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2022.2/data/ip'.
-add_files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 431.117 ; gain = 35.418
+add_files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 430.254 ; gain = 35.863
+Command: read_checkpoint -auto_incremental -incremental D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.srcs/utils_1/imports/synth_1/radiation_system_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.srcs/utils_1/imports/synth_1/radiation_system_wrapper.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top radiation_system_wrapper -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 35572
+INFO: [Synth 8-7075] Helper process launched with PID 54556
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1250.594 ; gain = 406.766
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1253.156 ; gain = 407.938
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'radiation_system_wrapper' [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/hdl/radiation_system_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'radiation_system' [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/synth/radiation_system.v:12]
-INFO: [Synth 8-6157] synthesizing module 'radiation_system_axi_gpio_0_0' [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-20872-DESKTOP-UI9B5C1/realtime/radiation_system_axi_gpio_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'radiation_system_axi_gpio_0_0' (0#1) [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-20872-DESKTOP-UI9B5C1/realtime/radiation_system_axi_gpio_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'radiation_system_axi_gpio_0_0' [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-52548-DESKTOP-UI9B5C1/realtime/radiation_system_axi_gpio_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'radiation_system_axi_gpio_0_0' (0#1) [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-52548-DESKTOP-UI9B5C1/realtime/radiation_system_axi_gpio_0_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'radiation_system_axi_interconnect_0_0' [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/synth/radiation_system.v:296]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1RI43Z5' [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/synth/radiation_system.v:601]
-INFO: [Synth 8-6157] synthesizing module 'radiation_system_auto_pc_0' [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-20872-DESKTOP-UI9B5C1/realtime/radiation_system_auto_pc_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'radiation_system_auto_pc_0' (0#1) [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-20872-DESKTOP-UI9B5C1/realtime/radiation_system_auto_pc_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'radiation_system_auto_pc_0' [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-52548-DESKTOP-UI9B5C1/realtime/radiation_system_auto_pc_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'radiation_system_auto_pc_0' (0#1) [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-52548-DESKTOP-UI9B5C1/realtime/radiation_system_auto_pc_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'radiation_system_auto_pc_0' is unconnected for instance 'auto_pc' [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/synth/radiation_system.v:836]
 WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'radiation_system_auto_pc_0' is unconnected for instance 'auto_pc' [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/synth/radiation_system.v:836]
 WARNING: [Synth 8-7023] instance 'auto_pc' of module 'radiation_system_auto_pc_0' has 59 connections declared, but only 57 given [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/synth/radiation_system.v:836]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1RI43Z5' (0#1) [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/synth/radiation_system.v:601]
 INFO: [Synth 8-6155] done synthesizing module 'radiation_system_axi_interconnect_0_0' (0#1) [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/synth/radiation_system.v:296]
-INFO: [Synth 8-6157] synthesizing module 'radiation_system_processing_system7_0_0' [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-20872-DESKTOP-UI9B5C1/realtime/radiation_system_processing_system7_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'radiation_system_processing_system7_0_0' (0#1) [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-20872-DESKTOP-UI9B5C1/realtime/radiation_system_processing_system7_0_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'radiation_system_radiation_detector_0_0' [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-20872-DESKTOP-UI9B5C1/realtime/radiation_system_radiation_detector_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'radiation_system_radiation_detector_0_0' (0#1) [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-20872-DESKTOP-UI9B5C1/realtime/radiation_system_radiation_detector_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'radiation_system_processing_system7_0_0' [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-52548-DESKTOP-UI9B5C1/realtime/radiation_system_processing_system7_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'radiation_system_processing_system7_0_0' (0#1) [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-52548-DESKTOP-UI9B5C1/realtime/radiation_system_processing_system7_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'radiation_system_radiation_detector_0_0' [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-52548-DESKTOP-UI9B5C1/realtime/radiation_system_radiation_detector_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'radiation_system_radiation_detector_0_0' (0#1) [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/.Xil/Vivado-52548-DESKTOP-UI9B5C1/realtime/radiation_system_radiation_detector_0_0_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'radiation_system' (0#1) [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/synth/radiation_system.v:12]
 INFO: [Synth 8-6155] done synthesizing module 'radiation_system_wrapper' (0#1) [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/hdl/radiation_system_wrapper.v:12]
 WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_1RI43Z5 is either unconnected or has no load
@@ -52,18 +57,18 @@ WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_1RI43Z5 is eit
 WARNING: [Synth 8-7129] Port ACLK in module radiation_system_axi_interconnect_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ARESETN in module radiation_system_axi_interconnect_0_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1344.973 ; gain = 501.145
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1347.949 ; gain = 502.730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1344.973 ; gain = 501.145
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1347.949 ; gain = 502.730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1344.973 ; gain = 501.145
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1347.949 ; gain = 502.730
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1344.973 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1347.949 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -77,40 +82,30 @@ Finished Parsing XDC File [d:/Documents/Project/radiation_detection_pynq/radiati
 Parsing XDC File [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/ip/radiation_system_radiation_detector_0_0/radiation_system_radiation_detector_0_0/radiation_system_radiation_detector_0_0_in_context.xdc] for cell 'radiation_system_i/radiation_detector_0'
 Finished Parsing XDC File [d:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.gen/sources_1/bd/radiation_system/ip/radiation_system_radiation_detector_0_0/radiation_system_radiation_detector_0_0/radiation_system_radiation_detector_0_0_in_context.xdc] for cell 'radiation_system_i/radiation_detector_0'
 Parsing XDC File [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc]
-WARNING: [Vivado 12-584] No ports matched 'clk'. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:3]
-WARNING: [Vivado 12-584] No ports matched 'clk'. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:4]
-WARNING: [Vivado 12-584] No ports matched 'rst_n'. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:7]
-WARNING: [Vivado 12-584] No ports matched 'alert'. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:10]
-WARNING: [Vivado 12-584] No ports matched 'rst_n'. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:13]
-WARNING: [Vivado 12-584] No ports matched 'rst_n'. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:16]
-WARNING: [Vivado 12-646] clock 'sys_clk' not found. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:16]
-WARNING: [Vivado 12-584] No ports matched 'rst_n'. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:17]
-WARNING: [Vivado 12-646] clock 'sys_clk' not found. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:17]
-WARNING: [Vivado 12-584] No ports matched 'alert'. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:18]
-WARNING: [Vivado 12-646] clock 'sys_clk' not found. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:18]
-WARNING: [Vivado 12-584] No ports matched 'alert'. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:19]
-WARNING: [Vivado 12-646] clock 'sys_clk' not found. [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc:19]
 Finished Parsing XDC File [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/radiation_system_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Documents/Project/radiation_detection_pynq/constraints/pynq_z2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/radiation_system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/radiation_system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1366.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1364.719 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1366.238 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1364.719 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1366.238 ; gain = 522.410
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.719 ; gain = 519.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1366.238 ; gain = 522.410
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.719 ; gain = 519.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -382,10 +377,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for radiation_system_i/axi_interconne
 Applied set_property KEEP_HIERARCHY = SOFT for radiation_system_i/axi_gpio_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for radiation_system_i/radiation_detector_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1366.238 ; gain = 522.410
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.719 ; gain = 519.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1366.238 ; gain = 522.410
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1364.719 ; gain = 519.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -412,25 +407,25 @@ WARNING: [Synth 8-7129] Port ARESETN in module radiation_system_axi_interconnect
 WARNING: [Synth 8-7129] Port M00_ACLK in module radiation_system_axi_interconnect_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M00_ARESETN in module radiation_system_axi_interconnect_0_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1366.238 ; gain = 522.410
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1364.719 ; gain = 519.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1366.238 ; gain = 522.410
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 1364.719 ; gain = 519.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1366.238 ; gain = 522.410
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 1364.719 ; gain = 519.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1366.238 ; gain = 522.410
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 1364.719 ; gain = 519.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -448,37 +443,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1367.387 ; gain = 523.559
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1366.566 ; gain = 521.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1367.387 ; gain = 523.559
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1366.566 ; gain = 521.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1367.387 ; gain = 523.559
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1366.566 ; gain = 521.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1367.387 ; gain = 523.559
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1366.566 ; gain = 521.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1367.387 ; gain = 523.559
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1366.566 ; gain = 521.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1367.387 ; gain = 523.559
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1366.566 ; gain = 521.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -505,24 +500,24 @@ Report Cell Usage:
 |5     |OBUF                                  |     5|
 +------+--------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1367.387 ; gain = 523.559
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1366.566 ; gain = 521.348
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1367.387 ; gain = 502.293
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1367.387 ; gain = 523.559
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 1366.566 ; gain = 504.578
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1366.566 ; gain = 521.348
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1379.430 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1378.637 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1391.441 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1389.863 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete, checksum: f42031f8
 INFO: [Common 17-83] Releasing license: Synthesis
-33 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+40 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1391.441 ; gain = 960.324
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 1389.863 ; gain = 954.863
 INFO: [Common 17-1381] The checkpoint 'D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.runs/synth_1/radiation_system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file radiation_system_wrapper_utilization_synth.rpt -pb radiation_system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jun  6 15:59:40 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun  6 21:17:10 2025...

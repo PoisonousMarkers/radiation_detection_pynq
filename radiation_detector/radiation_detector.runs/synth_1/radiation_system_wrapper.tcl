@@ -112,6 +112,8 @@ set_property used_in_implementation false [get_files D:/Documents/Project/radiat
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental D:/Documents/Project/radiation_detection_pynq/radiation_detector/radiation_detector.srcs/utils_1/imports/synth_1/radiation_system_wrapper.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

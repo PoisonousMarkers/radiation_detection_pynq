@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Fri Jun  6 16:01:25 2025
+| Date             : Fri Jun  6 21:18:59 2025
 | Host             : DESKTOP-UI9B5C1 running 64-bit major release  (build 9200)
 | Command          : report_power -file radiation_system_wrapper_power_routed.rpt -pb radiation_system_wrapper_power_summary_routed.pb -rpx radiation_system_wrapper_power_routed.rpx
 | Design           : radiation_system_wrapper
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.672        |
+| Total On-Chip Power (W)  | 1.674        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.534        |
-| Device Static (W)        | 0.138        |
+| Dynamic (W)              | 1.535        |
+| Device Static (W)        | 0.139        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 65.7         |
 | Junction Temperature (C) | 44.3         |
@@ -52,19 +52,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.004 |        3 |       --- |             --- |
+| Clocks                  |     0.003 |        3 |       --- |             --- |
 | Slice Logic             |     0.002 |     1477 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      445 |     53200 |            0.84 |
+|   LUT as Logic          |     0.001 |      446 |     53200 |            0.84 |
 |   CARRY4                |    <0.001 |       38 |     13300 |            0.29 |
 |   Register              |    <0.001 |      606 |    106400 |            0.57 |
 |   LUT as Shift Register |    <0.001 |       59 |     17400 |            0.34 |
 |   Others                |     0.000 |      181 |       --- |             --- |
-| Signals                 |     0.002 |     1026 |       --- |             --- |
+| Signals                 |     0.002 |     1024 |       --- |             --- |
 | DSPs                    |     0.000 |        1 |       220 |            0.45 |
-| I/O                     |    <0.001 |        5 |       125 |            4.00 |
+| I/O                     |     0.002 |        5 |       125 |            4.00 |
 | PS7                     |     1.526 |        1 |       --- |             --- |
-| Static Power            |     0.138 |          |           |                 |
-| Total                   |     1.672 |          |           |                 |
+| Static Power            |     0.139 |          |           |                 |
+| Total                   |     1.674 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,9 +76,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Vccint    |       1.000 |     0.022 |       0.007 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.015 |       0.000 |      0.015 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18    |       1.800 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -150,7 +150,7 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| radiation_system_wrapper |     1.534 |
+| radiation_system_wrapper |     1.535 |
 |   radiation_system_i     |     1.533 |
 |     axi_interconnect_0   |     0.005 |
 |       s00_couplers       |     0.005 |
